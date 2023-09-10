@@ -1,6 +1,6 @@
 import React from "react";
-import Box from "./box";
-const pricePage = () => {
+import Box from "./Box.js";
+const PricePage = () => {
   console.log("testtt");
   return (
     <div>
@@ -14,4 +14,4 @@ const pricePage = () => {
   );
 };
 
-export default pricePage;
+export default PricePage;

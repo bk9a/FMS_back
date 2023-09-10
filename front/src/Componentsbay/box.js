@@ -1,6 +1,6 @@
 import React from "react";
 
-const box = (props) => {
+const Box = (props) => {
   console.log("testtt");
   return (
     <div class="flex flex-col">
@@ -22,4 +22,4 @@ const box = (props) => {
   );
 };
 
-export default box;
+export default Box;

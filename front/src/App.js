@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
-import PPAGE from "./Componentsbay/pricePage";
+import PricePage from "./componentsbay/PricePage";
 
 function App() {
   return (
     <div className="App">
-      <PPAGE></PPAGE>
+      <PricePage></PricePage>
     </div>
   );
 }
