@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PPAGE from "./Componentsbay/PricePage";
+import PPAGE from "./Componentsbay/pricePage";
 
 function App() {
   return (

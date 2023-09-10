@@ -18,6 +18,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      colors: {
+        bodyhack: "#01feff",
+      },
       fontFamily: {
         confortaa: ["Comfortaa", "cursive"],
         fira: ["Fira Sans", "sans-serif"],
