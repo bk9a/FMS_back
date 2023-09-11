@@ -1,10 +1,10 @@
 import "./App.css";
-import PricePage from "./componentsbay/PricePage";
+import Home from "./components/pages/Home.tsx";
 
 function App() {
   return (
     <div className="App">
-      <PricePage></PricePage>
+
     </div>
   );
 }
