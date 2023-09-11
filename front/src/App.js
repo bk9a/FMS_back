@@ -1,9 +1,15 @@
+import logo from "./logo.svg";
 import "./App.css";
-import Home from "./components/pages/Home.tsx";
+import PPAGE from "./Componentsbay/PricePage";
+import Header from "./SuperAdmin/Header";
+import HeroSection from './SuperAdmin/HeroSection';
+
 
 function App() {
   return (
-    <div className="App">
+    <div className=" loader">
+      <Header></Header>
+      <HeroSection></HeroSection>
 
     </div>
   );

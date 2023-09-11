@@ -63,7 +63,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </main>
-            <div className="text-center py-3 bg-gradient-to-r from-red-500 to-amber-500">
+            <div className="text-center py-3 bg-gradient-to-r from-bodyhack to-amber-500">
                 <Text as="p" className="text-zinc-200 md:text-sm text-xs font-bold">{FooterTexts.copyright}</Text>
             </div>
         </footer>
