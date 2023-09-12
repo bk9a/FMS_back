@@ -55,7 +55,7 @@ const HeroSection = () => {
         }
     }, [])
     return (
-        <section className="w-full h-auto bg-gradient-to-r from-red-500 to-amber-500 relative overflow-x-hidden">
+        <section className="w-full h-auto bg-bodyhack relative overflow-x-hidden">
             <Slider ref={(slider) => (sliderRef.current = slider)} {...settings} className="h-full">
                 {
                     HeroTexts.map((hero, index) => (
@@ -77,7 +77,7 @@ const HeroSection = () => {
                                 </Text>
                                 <div className="flex items-center gap-8">
                                     <Slide direction="up">
-                                        <Button type="button" className="px-10 font-medium text-white py-2.5 bg-gradient-to-r whitespace-nowrap from-red-500 to-amber-500">
+                                        <Button type="button" className="px-10 font-medium text-white py-2.5 bg-bodyhack">
                                             {hero.Button}
                                         </Button>
                                     </Slide>
