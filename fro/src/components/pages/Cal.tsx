@@ -10,7 +10,7 @@ import Testimonials from "../organs/Testimonials";
 
 const Cal = () => {
   return (
-    <div className="w-full h-full bg-red-900">
+    <div className="w-full h-96 bg-red-900">
       <CalculatorCal />
     </div>
   );
