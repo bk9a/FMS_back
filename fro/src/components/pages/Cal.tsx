@@ -1,18 +1,18 @@
-import About from "../organs/About";
-import Blogs from "../organs/Blogs";
-import Calculator from "../organs/Calculator";
 import CalculatorCal from "../organs/CalculatorCal";
-import Contact from "../organs/Contact";
-import HeroSection from "../organs/HeroSection";
-import Membership from "../organs/Membership";
-import Offers from "../organs/Offers";
-import Testimonials from "../organs/Testimonials";
 
 const Cal = () => {
   return (
+<<<<<<< Updated upstream
     <div className="w-full h-96 bg-red-900">
+=======
+<<<<<<< HEAD
+    <>
+=======
+    <div className="w-full h-96 bg-red-900">
+>>>>>>> 729e97c500518b3ebbe355a9d0d6567932a5f048
+>>>>>>> Stashed changes
       <CalculatorCal />
-    </div>
+    </>
   );
 };
 
