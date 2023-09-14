@@ -33,7 +33,10 @@ export const Input = ({
             placeholder={Placeholder}
             className="w-full h-12 pl-4 pr-8 text-zinc-400 outline-none transition-all duration-200 focus:border-amber-500 border border-zinc-400 bg-transparent"
             value={value}
-            onChange={()=>change(value)}
+            // onChange={(e)=>change((e.target.value))}
+            onChange={(e: React.FormEvent<HTMLInputElement>) => {
+              change(e.currentTarget.value as any);
+            }}
           />
         </div>
       </InputField>

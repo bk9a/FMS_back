@@ -13,8 +13,9 @@ const CalculatorCal = () => {
   const [sexValue, setSexValue] = useState<number>(1);
   const [bmiValue, setBmiValue] = useState<string | number>("30");
 
-  const setAgeValueFunc = () => {
-    console.log("test");
+  const setAgeValueFunc = (value : number) => {
+    setAgeValue(value); 
+    console.log({value});
   };
 
   return (

@@ -11,6 +11,7 @@ export default function () {
     
     <Routes>
       <Route path="/" element={<Home />}  />
+      <Route path="/cal" element={<Cal />}  />
 
     </Routes>
   );
