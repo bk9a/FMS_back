@@ -9,7 +9,7 @@ import { Input } from "../atoms/Input";
 const CalculatorCal = () => {
   const [heightValue, setHeightValue] = useState<string | number>(0);
   const [weightValue, setWeightValue] = useState<string | number>(0);
-  const [ageValue, setAgeValue] = useState<string | number>(0);
+  const [ageValue, setAgeValue] = useState<number>(0);
   const [sexValue, setSexValue] = useState<number>(1);
   const [bmiValue, setBmiValue] = useState<string | number>("30");
 

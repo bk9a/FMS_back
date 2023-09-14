@@ -3,10 +3,11 @@ import { InputField } from "./InputField";
 type InputProps = {
   Title: string;
   Placeholder: string;
-  change: () => {};
+  change: (a: number) => void;
+  
   children?: React.ReactNode;
   ContainerClass: string;
-  value: string;
+  value: number;
 } & Omit<React.ComponentProps<"input">, "children">;
 
 export const Input = ({
@@ -32,7 +33,7 @@ export const Input = ({
             placeholder={Placeholder}
             className="w-full h-12 pl-4 pr-8 text-zinc-400 outline-none transition-all duration-200 focus:border-amber-500 border border-zinc-400 bg-transparent"
             value={value}
-            onChange={change}
+            onChange={()=>change(value)}
           />
         </div>
       </InputField>
