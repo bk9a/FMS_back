@@ -21,24 +21,13 @@ function App() {
     <div className="w-full h-full bg-zinc-900 font-nunito relative">
     
       <Routes>
-<<<<<<< Updated upstream
+
         <Route path="/" element={<Home />} />
       </Routes>
-=======
-<<<<<<< HEAD
-        <Route path="/cal" element={<Cal />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </>
-  );
-=======
-        <Route path="/" element={<Home />} />
-      </Routes>
->>>>>>> Stashed changes
+
       <Footer />
     </div>
   )
->>>>>>> 729e97c500518b3ebbe355a9d0d6567932a5f048
 }
 
 export default App;

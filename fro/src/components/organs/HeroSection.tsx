@@ -48,7 +48,7 @@ const HeroSection = () => {
     const renderProfileImg = useCallback((element: number) => {
         switch (element) {
             case 0:
-                return HeroImg11;
+                return HeroImg1;
             case 1:
                 return HeroImg21;
             case 2:
@@ -64,7 +64,7 @@ const HeroSection = () => {
                     HeroTexts.map((hero, index) => (
                         <main className="w-full lg:h-screen md:h-[50vh] h-screen relative bg-zinc-900 overflow-x-hidden" key={index}>
                             <Zoom className="h-full">
-                                <Image className="md:w-[60%] w-full md:h-full h-1/2" alt="HeroImg1" objectCover="object-cover " image={renderProfileImg(index)} />
+                                <Image className="md:w-[50%] w-full md:h-full h-1/2" alt="HeroImg1" objectCover="object-cover " image={renderProfileImg(index)} />
                             </Zoom>
 
                             <div className="md:w-[50%] w-full md:h-full h-1/2 absolute md:top-0 top-1/2 right-0 bg-zinc-900 flex flex-col md:justify-center justify-start lg:gap-8 md:gap-4 gap-2 lg:px-20 md:px-6 px-4 overflow-x-hidden">
