@@ -7,9 +7,8 @@ import logo from "../../assets/body/logo192.png"
 import { Link } from "react-router-dom";
 import { Text } from "../atoms/Text";
 
-import { useSelector } from "react-redux";
+
 const NavBar = () => {
-    const ProName = useSelector((state) => state.system.userData.name);
 
     const [open, setOpen] = useState(false)
 
@@ -52,18 +51,7 @@ const NavBar = () => {
                             ))
                         }
 
-{
-    ProName  ? <List className="w-full text-base" key={20}>
-    <NavLink to={'/profile'} className={`relative inline-block  px-2 whitespace-nowrap text-white uppercase text-xs font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5`}>{ProName}</NavLink>
-</List> : 
-<List className="w-full text-base" key={20}>
-                                    <NavLink to={'/login'} className={`relative inline-block  px-2 whitespace-nowrap text-white uppercase text-xs font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5`}>Нэвтрэх</NavLink>
-                                </List>
-
-}
-                             
                     </ul>
-
                 </div>
                 <div className="hamburger lg:hidden flex text-white cursor-pointer" onClick={handleToggle}>
                     <CirclesFour size={30} color="currentColor" weight="light" />

@@ -5,7 +5,7 @@ import Contact from "../organs/Contact"
 import Footer from "../organs/Footer"
 import HeroSection from "../organs/HeroSection"
 import Membership from "../organs/Membership"
-import NavBar from "../organs/NavBar.js"
+import NavBar from "../organs/NavBar"
 import Offers from "../organs/Offers"
 import Testimonials from "../organs/Testimonials"
 

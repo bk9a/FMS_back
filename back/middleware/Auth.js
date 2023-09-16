@@ -17,7 +17,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
   }
 
   const tokenObj = jwt.verify(token, process.env.JWT_PASS);
-  console.log( tokenObj.user);
+  console.log(tokenObj);
   req.LogedUser = tokenObj.user;
   next();
 });

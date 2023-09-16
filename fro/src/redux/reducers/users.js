@@ -8,7 +8,7 @@ import {
   setAlertStatus,
 } from "./system";
 import helper from "../../helper/helper";
-import { setToken ,setUserData} from "./system";
+import { setToken } from "./system";
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -33,9 +33,12 @@ export const slice = createSlice({
       RoleID: "",
     },
     formData: {
-      name: null,
-      phone: null,
-
+      UserName: null,
+      Password: null,
+      EmpFirstName: null,
+      EmpLastName: null,
+      RoleID: null,
+      IsActive: null,
     },
     fieldConfig: {
       RoleID: {
@@ -255,23 +258,22 @@ export const loadDataSourceRole = () => async (dispatch) => {
   }
 };
 
-export const Login = ({username, password}) => async (dispatch, getState) => {
+export const Login = () => async (dispatch, getState) => {
   try {
-    console.log("fuck u login");
     dispatch(setLoading(true));
     const currentState = getState().users.formData;
 
-    if (password && password) {
+    if (currentState.Password && currentState.UserName) {
       const res = await axios.post(
         process.env.REACT_APP_API_URL + `/users/login`,
         {
-          Username: username,
-          Password: password,
+          Username: currentState.UserName,
+          Password: currentState.Password,
         }
       );
       if (res.data.success === true) {
         localStorage.setItem("token", res.data.token);
-      
+
         dispatch(setToken(res.data.token));
         dispatch(setAlert(true));
         dispatch(setAlertStatus(true));
@@ -343,10 +345,6 @@ export const checkLogin = () => async (dispatch, getState) => {
       { headers: { authorization: "Bearer " + token } }
     );
     if (res.data.success === true) {
-
-      // console.log(res.data.user);
-      dispatch(setUserData(res.data.user))
-      
       dispatch(setAlert(true));
       dispatch(setAlertStatus(true));
       dispatch(setToken(token));

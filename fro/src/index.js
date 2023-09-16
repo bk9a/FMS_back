@@ -24,7 +24,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(checkLogin());
-  }, [token]);
+  }, []);
 
   // if (loading) {
   //   return (

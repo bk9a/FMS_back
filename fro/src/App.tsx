@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { animateScroll } from "react-scroll";
+import NavBar from "./components/organs/NavBar";
 import Home from "./components/pages/Home";
 import Footer from "./components/organs/Footer";
 

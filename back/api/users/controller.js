@@ -397,19 +397,45 @@ module.exports.convert = asyncHandler(async (req, res) => {
 
 module.exports.list = asyncHandler(async (req, res) => {
   const { params } = req.query;
-console.log({params});
-
   var par = JSON.parse(params);
 
   const where = {};
-
+  if (par) {
+    where[Op.and] = [
+      {
+        UserName: {
+          [Op.like]: "%" + par.UserName + "%",
+        },
+      },
+      {
+        EmpFirstName: {
+          [Op.like]: "%" + par.EmpFirstName + "%",
+        },
+      },
+      {
+        EmpLastName: {
+          [Op.like]: "%" + par.EmpLastName + "%",
+        },
+      },
+      {
+        RoleID: {
+          [Op.like]: "%" + par.RoleID + "%",
+        },
+      },
+    ];
+  }
   const pager = req.pager;
   const { rows, count } = await users.findAndCountAll({
     where: where,
     // order: [["UserName", "UserName"]],
 
- 
-   
+    include: [
+      {
+        model: user_role,
+        as: "user_role",
+      },
+    ],
+    ...pager,
   });
 
   res.status(200).send({
@@ -752,9 +778,8 @@ module.exports.login = asyncHandler(async (req, res, next) => {
   // Тухайн хэрэглэгчийн хайна
   const user = await users.findOne({ where: { Username } });
   if (user) {
-    console.log({user});
-    if (user.password === Password) {
-      delete user.dataValues["password"];
+    if (user.Password === Password) {
+      delete user.dataValues["Password"];
 
       jwt.sign(
         { user },
@@ -771,7 +796,7 @@ module.exports.login = asyncHandler(async (req, res, next) => {
     } else {
       res.status(200).json({
         success: false,
-        message: "Нэвтрэх нэр эсвэл нууц үг буруу golgoo байна!!!",
+        message: "Нэвтрэх нэр эсвэл нууц үг буруу байна!!!",
       });
     }
   } else {
@@ -783,12 +808,9 @@ module.exports.login = asyncHandler(async (req, res, next) => {
 });
 
 module.exports.checklogin = asyncHandler(async (req, res) => {
-
-
   res.status(200).json({
     success: true,
-    stat: "1",
-    user: req.LogedUser,
+    // user: req.LogedUser,
   });
 });
 

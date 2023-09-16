@@ -10,10 +10,6 @@ export const slice = createSlice({
     token: null,
     alertStatus: null,
     alertMessege: null,
-    userData:{
-      name:null,
-      phone:null
-    }
   },
   reducers: {
     setLoading: (state, { payload }) => {
@@ -25,9 +21,6 @@ export const slice = createSlice({
     setToken: (state, { payload }) => {
       state.token = payload;
       state.sysLoading = false;
-    },
-    setUserData: (state, { payload }) => {
-      state.userData = payload;
     },
     setAlert: (state, { payload }) => {
       state.alert = payload;
@@ -47,7 +40,7 @@ export const {
   setAlert,
   setAlertMessege,
   setAlertStatus,
-  setSysLoading,setUserData
+  setSysLoading,
 } = slice.actions;
 
 export default slice.reducer;
