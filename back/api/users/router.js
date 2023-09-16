@@ -22,7 +22,7 @@ router.route("/get-noti").get(Auth.protect, getNoti);
 router.route("/convert").get(Auth.protect, convert);
 router
   .route("/")
-  .get(Auth.protect, middleWare.list, list)
+  .get( middleWare.list, list)
   .post(Auth.protect, validation.create, create);
 
 router

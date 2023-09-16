@@ -4,12 +4,7 @@ module.exports = (sequelize, ModelHelper) => {
   class user_role extends Sequelize.Model {
     static associate({ users }) {
       this.Assocations = [
-        {
-          type: "hasMany",
-          model: users,
-          as: "users",
-          foreignKey: "RoleID",
-        },
+     
       ];
       ModelHelper.SetAssocations(this);
     }
