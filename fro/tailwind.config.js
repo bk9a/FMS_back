@@ -7,7 +7,7 @@ export default {
         nunito: ["Nunito Sans"],
       },
       colors: {
-        bodyhack: "#277664",
+        bodyhack: "#01feff",
       },
     },
   },
