@@ -4,7 +4,7 @@ import HeroImg1 from "../../assets/hero/1.jpeg"
 import HeroImg2 from "../../assets/hero/2.jpeg"
 import HeroImg3 from "../../assets/hero/3.jpeg"
 import HeroImg11 from "../../assets/body/23.jpg"
-import HeroImg21 from "../../assets/body/24.jpg"
+import HeroImg21 from "../../assets/body/23.jpeg"
 import HeroImg31 from "../../assets/body/25.jpg"
 import { HeroTexts } from "../particles/Data";
 import Slider from "react-slick";
@@ -48,7 +48,7 @@ const HeroSection = () => {
     const renderProfileImg = useCallback((element: number) => {
         switch (element) {
             case 0:
-                return HeroImg1;
+                return HeroImg11;
             case 1:
                 return HeroImg21;
             case 2:

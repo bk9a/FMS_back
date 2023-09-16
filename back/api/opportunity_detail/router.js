@@ -1,0 +1,30 @@
+const router = require("express").Router();
+const Auth = require("../../middleware/Auth");
+const middleWare = require("./middleWare");
+const validation = require("./validation");
+const {
+  list,
+  create,
+  show,
+  update,
+  destroy,
+  createService,
+  createPackage,
+  updateDetails,
+} = require("./controller");
+
+router.route("/service-create").post(Auth.protect, createService);
+router.route("/package-update").post(Auth.protect, updateDetails);
+router.route("/package-create").post(Auth.protect, createPackage);
+router
+  .route("/")
+  .get(Auth.protect, middleWare.list, list)
+  .post(Auth.protect, validation.create, create);
+
+router
+  .route("/:id")
+  .get(Auth.protect, show)
+  .put(Auth.protect, update)
+  .delete(Auth.protect, destroy);
+
+module.exports = router;
