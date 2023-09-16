@@ -3,6 +3,7 @@ import { NavLinks } from "../particles/Data"
 import { List } from "../atoms/List";
 import { NavLink } from "react-router-dom";
 import { ArrowCircleRight, Barbell, CirclesFour } from "@phosphor-icons/react";
+import logo from "../../assets/body/logo192.png"
 import { Link } from "react-router-dom";
 import { Text } from "../atoms/Text";
 
@@ -35,9 +36,10 @@ const NavBar = () => {
                 <Link to={`/`} className="font-extrabold flex items-center relative md:text-2xl text-lg">
                     <Text as="span" className="text-amber-500 absolute -top-3 md:left-5 left-3">
                         <Barbell size={25} color="currentColor" weight="fill" />
+                        {/* <img src={logo}/> */}
                     </Text>
-                    <Text as="span" className="text-white">Gym</Text>
-                    <Text as="span" className="bg-gradient-to-r from-amber-500 to-red-500 bg-clip-text text-transparent">Nex</Text>
+                    <Text as="span" className="text-white">Body</Text>
+                    <Text as="span" className="bg-gradient-to-r from-[#00c6ac] to-bodyhack bg-clip-text text-transparent">Hacker</Text>
                 </Link>
                 <div className="lg:flex hidden items-center h-full gap-20">
                     <ul className="flex items-center justify-center h-full gap-4 relative before:w-full before:h-0.5 before:absolute before:bottom-0 before:left-0 before:bg-zinc-400">
@@ -64,8 +66,8 @@ const NavBar = () => {
                     <section className="w-full px-4 py-6 flex flex-col gap-16">
                         <div className="w-full flex pt-5 px-4 justify-between items-center">
                             <Link to={`/`} className="font-extrabold text-2xl">
-                                <span className=" text-white ">Gym</span>
-                                <span className=" text-amber-500">Nex</span>
+                                <span className=" text-white ">Body</span>
+                                <span className=" text-amber-500">Hacker</span>
                             </Link>
                             <div className="hamburger text-white cursor-pointer" onClick={handleToggle}>
                                 <ArrowCircleRight size={25} color="currentColor" weight="light" />

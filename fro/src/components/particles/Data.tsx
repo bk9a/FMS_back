@@ -29,25 +29,25 @@ export const NavLinks = [
 
 export const HeroTexts = [
     {
-        Heading: "Unleash Your Inner Strength!",
-        Paragraph: "Welcome to GymNex, where fitness meets fun! Get ready to unleash your inner strength and transform your life!",
-        Button: "Join Now!"
+        Heading: "Сахилга бат бол зорилго ба амжилтын хоорондох гүүр мөн!",
+        Paragraph: "Эхлээд өөрийгөө өөрчил. Тэгвэл ертөнц өөрчлөгдөхийг үзнэ. Аливаа хүний агуу нь дэлхийг өөрчилснөөр биш өөрийгөө өөрчилснөөр хэмжигдэнэ!!",
+        Button: "Бүртгүүлэх!"
     },
     {
-        Heading: "New Heights of Fitness!",
-        Paragraph: "Push your limits and achieve greatness at our gym! Join our supportive community and embark on a journey of self-improvement and empowerment!",
-        Button: "Sign Up Today!"
+        Heading: "Хувийн сахилга бат бол амжилтанд хүрэх жинхэнэ нууц юм!",
+        Paragraph: "Амжилтанд хүрэхийн тулд үнэхээр ид шидийн орц байсан бол өөрийгөө сахилга баттай болгох болно. Энэхүү зорилгодоо хүрэхэд тань бид туслах болно",
+        Button: "Бидэнтэй нэгдэх!"
     },
     {
-        Heading: "Fitness is Fun with Us!",
-        Paragraph: "At our gym, fitness is not just a routine; it's an enjoyable adventure! Join us in this fitness expedition, where fun and results go hand in hand!",
-        Button: "Enroll Now!"
+        Heading: "Уламжлалтаар биш ухаалгаар!",
+        Paragraph: "Өөрийн сахилга батыг хөгжүүлэх гайхалтай арга бол хамгийн залхуу үедээ хийх ёстой зүйлээ хийж хэвшүүлэх явдал юм. Та үнэхээр залхуу санагдах болгондоо хиймээр санагдсан зүйлийнхээ эсрэгээр хий!",
+        Button: "Яг одоо эхэл!"
     }
 ]
 
 
 export const AboutTexts = {
-    firstText: "About GymNex",
+    firstText: " Body hacker",
     secondText: "Welcome",
     caption: "Welcome to GymNex, where fitness meets community and transformation happens!",
     paragraph1: "At GymNex, we are more than just a gym; we are a passionate and supportive fitness family dedicated to helping you achieve your health and wellness goals. Our mission is to create a positive and empowering environment that inspires you to challenge yourself, embrace a healthy lifestyle, and discover the best version of yourself.",
@@ -132,7 +132,7 @@ export const BlogTexts = {
     blogNews: [
         {
             caption: "Yoga",
-            title: "Do your self realizations quickly fade",
+            title: "Do your self realizations quickly ",
             paragraph: "Discover the transformative power of yoga as we explore its numerous physical and mental benefits. From increased flexibility and strength to reduced stress and enhanced mindfulness, our yoga classes cater to practitioners of all levels. Join us on the mat and experience the harmony of mind, body, and soul.",
             time: "1m",
             author: "Ralph Cruz",
