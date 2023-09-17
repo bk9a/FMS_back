@@ -4,10 +4,10 @@ type InputProps = {
   Title: string;
   Placeholder: string;
   change: (a: number) => void;
-  
   children?: React.ReactNode;
   ContainerClass: string;
   value: number;
+  max?: number;
 } & Omit<React.ComponentProps<"input">, "children">;
 
 export const Input = ({
@@ -16,6 +16,7 @@ export const Input = ({
   ContainerClass,
   change,
   value,
+  max,
   children,
 }: InputProps) => {
   return (
@@ -37,6 +38,9 @@ export const Input = ({
             onChange={(e: React.FormEvent<HTMLInputElement>) => {
               change(e.currentTarget.value as any);
             }}
+            min="0"
+            max={max}
+            step="1"
           />
         </div>
       </InputField>
