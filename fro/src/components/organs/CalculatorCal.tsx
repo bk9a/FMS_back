@@ -2,16 +2,31 @@ import { useState, useEffect } from "react";
 import { Text } from "../atoms/Text";
 import { Input } from "../atoms/Input";
 import { Selection } from "../atoms/Selection";
+import ReactSelect from "../atoms/ReactSelect";
 
 interface Option {
   value: number;
   label: string;
 }
 
+interface FoodOption {
+  value: number;
+  label: string;
+  calories: number;
+}
+
 const CalculatorCal = () => {
   const options: Option[] = [
     { value: 0, label: "Эр" },
     { value: 1, label: "Эм" },
+  ];
+
+  const Foods: FoodOption[] = [
+    { value: 0, label: "Food1", calories: 1.1 },
+    { value: 1, label: "Food2", calories: 1.2 },
+    { value: 2, label: "Food3", calories: 1.3 },
+    { value: 3, label: "Food4", calories: 1.4 },
+    { value: 4, label: "Food5", calories: 1.5 },
   ];
 
   const [heightValue, setHeightValue] = useState<number>(0);
@@ -75,6 +90,10 @@ const CalculatorCal = () => {
   // const setSexValueFunc = (value: number) => {
   //   setSexValue(value);
   // };
+
+  const setFoodOptionFunc = (newOption: number) => {
+    console.log(newOption);
+  };
 
   const setSexValueFunc = (newOption: number) => {
     setSexValue(newOption);
@@ -151,14 +170,20 @@ const CalculatorCal = () => {
           </Text>
         </div>
       </div>
-      <div className="w-10/12 space-y-10">
+      <div className="w-10/12 flex justify-between">
         <Input
           value={calOneEat}
-          ContainerClass={"w-60"}
+          ContainerClass={"w-2/12"}
           Title={"Тухайн хоолонд авах калори"}
           Placeholder={"Тухайн хоолонд авах калори"}
           change={setCalOneEatFunc}
           max={bmiValue}
+        />
+        <Selection
+          ContainerClass={"w-9/12"}
+          Title={"Хоолны орц сонгох"}
+          options={Foods}
+          change={setFoodOptionFunc}
         />
       </div>
     </div>

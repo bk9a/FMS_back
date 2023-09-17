@@ -10,7 +10,7 @@ type SelectProps = {
   Title: string;
   change: (newOption: number) => void;
   options: Option[];
-  selectedOption: number;
+  selectedOption?: number;
   ContainerClass: string;
 };
 

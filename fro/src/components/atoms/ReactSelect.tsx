@@ -1,6 +1,5 @@
 import React from "react";
 import chroma from "chroma-js";
-
 import { ColourOption, colourOptions } from "./data";
 import Select, { StylesConfig } from "react-select";
 
@@ -60,7 +59,6 @@ const colourStyles: StylesConfig<ColourOption, true> = {
 export default () => (
   <Select
     closeMenuOnSelect={false}
-    defaultValue={[colourOptions[0], colourOptions[1]]}
     isMulti
     options={colourOptions}
     styles={colourStyles}
