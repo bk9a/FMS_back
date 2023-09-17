@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Image } from "../atoms/Image";
 import { Text } from "../atoms/Text";
 import CalImg from "../../assets/gym/9.jpeg";
@@ -7,15 +7,34 @@ import { Fade } from "react-awesome-reveal";
 import { Input } from "../atoms/Input";
 
 const CalculatorCal = () => {
-  const [heightValue, setHeightValue] = useState<string | number>(0);
-  const [weightValue, setWeightValue] = useState<string | number>(0);
+  const [heightValue, setHeightValue] = useState<number>(0);
+  const [weightValue, setWeightValue] = useState<number>(0);
   const [ageValue, setAgeValue] = useState<number>(0);
   const [sexValue, setSexValue] = useState<number>(1);
   const [bmiValue, setBmiValue] = useState<string | number>("30");
 
-  const setAgeValueFunc = (value : number) => {
-    setAgeValue(value); 
-    console.log({value});
+  useEffect(() => {
+    if (heightValue != 0 && weightValue != 0 && ageValue != 0) {
+    }
+    let c = heightValue + weightValue + ageValue;
+
+    setBmiValue(c);
+  }, [heightValue, weightValue, ageValue, sexValue]);
+
+  const setAgeValueFunc = (value: number) => {
+    setAgeValue(value);
+  };
+
+  const setWeightValueFunc = (value: number) => {
+    setWeightValue(value);
+  };
+
+  const setHeightValueFunc = (value: number) => {
+    setAgeValue(value);
+  };
+
+  const setSexValueFunc = (value: number) => {
+    setAgeValue(value);
   };
 
   return (
@@ -42,6 +61,27 @@ const CalculatorCal = () => {
             Title={"Age"}
             Placeholder={"Enter your age"}
             change={setAgeValueFunc}
+          />
+          <Input
+            value={weightValue}
+            ContainerClass={"w-60"}
+            Title={"Weight"}
+            Placeholder={"Enter your weight"}
+            change={setWeightValueFunc}
+          />
+          <Input
+            value={heightValue}
+            ContainerClass={"w-60"}
+            Title={"Height"}
+            Placeholder={"Enter your heigth"}
+            change={setHeightValue}
+          />
+          <Input
+            value={sexValue}
+            ContainerClass={"w-60"}
+            Title={"Sex"}
+            Placeholder={"Enter your sex"}
+            change={setSexValue}
           />
         </div>
         <div className="w-full flex flex-col p-4 bg-zinc-700">

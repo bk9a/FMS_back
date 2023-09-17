@@ -8,11 +8,9 @@ import App from "./App";
 
 export default function () {
   return (
-    
     <Routes>
-      <Route path="/" element={<Home />}  />
-      <Route path="/cal" element={<Cal />}  />
-
+      <Route path="/" element={<Home />} />
+      <Route path="/cal" element={<Cal />} />
     </Routes>
   );
 }
