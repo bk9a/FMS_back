@@ -9,7 +9,7 @@ import { Text } from "../atoms/Text";
 
 import { useSelector } from "react-redux";
 const NavBar = () => {
-    const ProName = useSelector((state) => state.system.userData.name);
+    const ProName = useSelector((state) => state.system.userData?.name);
 
     const [open, setOpen] = useState(false)
 
