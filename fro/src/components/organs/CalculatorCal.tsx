@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Text } from "../atoms/Text";
 import { Input } from "../atoms/Input";
+import { Button } from "../atoms/Button";
 import { Selection } from "../atoms/Selection";
 import ReactSelect from "../atoms/ReactSelect";
+import { Ingreadant } from "../atoms/Ingreadant";
 
 interface Option {
   value: number;
@@ -37,6 +39,7 @@ const CalculatorCal = () => {
   const [bmiValue, setBmiValue] = useState<number>(0);
   const [numEat, setNumEat] = useState<number>(0);
   const [calOneEat, setCalOneEat] = useState<number>(0);
+  const [amountFood, setAmountFood] = useState<number>(0);
   const itemElements = [];
 
   useEffect(() => {
@@ -102,6 +105,12 @@ const CalculatorCal = () => {
   const setCalOneEatFunc = (value: number) => {
     setCalOneEat(value);
   };
+
+  const setAmountFoodFunc = (value: number) => {
+    setAmountFood(value);
+  };
+
+  const addIngrFunc = (value: number) => {};
 
   // for (let i = 0; i < numEat; i++) {
   //   itemElements.push(
@@ -170,21 +179,42 @@ const CalculatorCal = () => {
           </Text>
         </div>
       </div>
-      <div className="w-10/12 flex justify-between">
+      <div className="w-10/12 flex justify-between items-end">
         <Input
           value={calOneEat}
-          ContainerClass={"w-2/12"}
+          ContainerClass={"w-3/12"}
           Title={"Тухайн хоолонд авах калори"}
           Placeholder={"Тухайн хоолонд авах калори"}
           change={setCalOneEatFunc}
           max={bmiValue}
         />
         <Selection
-          ContainerClass={"w-9/12"}
+          ContainerClass={"w-3/12"}
           Title={"Хоолны орц сонгох"}
           options={Foods}
           change={setFoodOptionFunc}
         />
+        <Input
+          value={amountFood}
+          ContainerClass={"w-3/12"}
+          Title={"Орцны хэмжээ(грамм)"}
+          Placeholder={"Орцны хэмжээ"}
+          change={setAmountFoodFunc}
+        />
+        <Button
+          type="button"
+          className="px-6 py-3 bg-bodyhack text-gray-700 text-sm uppercase font-semibold h-12 w-40"
+        >
+          Add
+        </Button>
+      </div>
+      <div className="w-10/12 h-fit bg-zinc-700 grid gap-4 grid-cols-4 py-4">
+        <Ingreadant name="Food1" gram={1.1} />
+      </div>
+      <div className="w-10/12 flex p-4 bg-zinc-700 justify-around">
+        <Text as="h2" className="text-zinc-200 text-lg text-center">
+          Your calorie is <span className="font-extrabold">test</span>
+        </Text>
       </div>
     </div>
   );
