@@ -47,7 +47,8 @@ export const {
   setAlert,
   setAlertMessege,
   setAlertStatus,
-  setSysLoading,setUserData
+  setSysLoading,
+  setUserData
 } = slice.actions;
 
 export default slice.reducer;
