@@ -778,8 +778,8 @@ module.exports.login = asyncHandler(async (req, res, next) => {
   // Тухайн хэрэглэгчийн хайна
   const user = await users.findOne({ where: { Username } });
   if (user) {
-    if (user.Password === Password) {
-      delete user.dataValues["Password"];
+    if (user.password === Password) {
+      delete user.dataValues["password"];
 
       jwt.sign(
         { user },
@@ -796,7 +796,7 @@ module.exports.login = asyncHandler(async (req, res, next) => {
     } else {
       res.status(200).json({
         success: false,
-        message: "Нэвтрэх нэр эсвэл нууц үг буруу байна!!!",
+        message: "Нэвтрэх нэр эсвэл нууц үг буруу байна!",
       });
     }
   } else {
@@ -810,7 +810,7 @@ module.exports.login = asyncHandler(async (req, res, next) => {
 module.exports.checklogin = asyncHandler(async (req, res) => {
   res.status(200).json({
     success: true,
-    // user: req.LogedUser,
+    user: req.LogedUser,
   });
 });
 

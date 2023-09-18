@@ -5,7 +5,7 @@ import {
   setLoading,
   setAlert,
   setAlertMessege,
-  setAlertStatus,
+  setAlertStatus
 } from "./system";
 import helper from "../../helper/helper";
 import { setToken ,setUserData} from "./system";
@@ -257,9 +257,8 @@ export const loadDataSourceRole = () => async (dispatch) => {
 
 export const Login = ({username, password}) => async (dispatch, getState) => {
   try {
-    console.log("fuck u login");
+   
     dispatch(setLoading(true));
-    const currentState = getState().users.formData;
 
     if (password && password) {
       const res = await axios.post(
