@@ -3,7 +3,6 @@ import { InputField } from "./InputField";
 type IngreadantProps = {
   name: string;
   gram: number;
-  id: number;
   //   Placeholder: string;
   remove: (a: number) => void;
   //   children?: React.ReactNode;
@@ -12,9 +11,10 @@ type IngreadantProps = {
   //   max?: number;
 } & Omit<React.ComponentProps<"input">, "children">;
 
-export const Ingreadant = ({ name, gram, id, remove }: IngreadantProps) => {
+export const Ingreadant = ({ name, gram, remove }: IngreadantProps) => {
   const handleSelectChange = () => {
-    remove(id as any);
+    // remove(id as number);
+    console.log("test");
   };
   return (
     <div className="w-full flex justify-center items-center">

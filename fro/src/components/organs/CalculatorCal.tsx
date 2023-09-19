@@ -140,7 +140,7 @@ const CalculatorCal = () => {
               calorie: calories * amountFoodVal,
               name: el.label,
               gram: amountFoodVal,
-              id: calories,
+              id: id,
             },
           ]);
           return;
@@ -235,7 +235,6 @@ const CalculatorCal = () => {
         {ingre.map((el, i) => (
           <Ingreadant
             key={i}
-            id={el.id}
             name={el.name}
             gram={el.gram}
             remove={removeIng}
