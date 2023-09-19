@@ -6,7 +6,7 @@ import { MembershipPlans } from "../particles/Data"
 
 const Membership = () => {
     return (
-        <section className="w-full  h-auto py-20 md:py-28 lg:py-40 bg-zinc-950 flex flex-col md:gap-28 gap-20 justify-center items-center">
+        <section className="w-full  h-auto py-20 md:py-28 lg:py-40 bg-zinc-950 flex flex-col md:gap-28 gap-20 justify-center items-center" id="Membership">
             <div className="flex flex-col items-center relative before:absolute before:-bottom-6 before:left-30 before:w-36 before:h-1 before:rounded-lg before:bg-bodyhack z-10">
                 <Text as="p" className="text-amber-500 md:text-sm text-xs tracking-widest uppercase">{MembershipPlans.firstText}</Text>
                 <Text as="h1" className="text-zinc-100 lg:text-5xl md:text-4xl text-3xl">{MembershipPlans.secondText}</Text>
@@ -17,8 +17,8 @@ const Membership = () => {
                     MembershipPlans.cards.map((card, index) => (
                         <Card className={`w-full flex flex-col items-center gap-4 border border-zinc-500  transition-all duration-200 cursor-pointer hover:border-red-500/50 ${index === 1 ? "lg:py-16 py-10" : "py-10"}`} key={index}>
                             <Text as="h2" className="text-zinc-100 flex items-end gap-0.5">
-                                <span className="font-extrabold text-2xl">$</span>
-                                <span className={`font-extrabold ${card.amount === 49 ? "text-6xl" : "text-5xl"}`}>{card.amount}</span>
+                                <span className="font-extrabold text-2xl">₮</span>
+                                <span className={`font-extrabold ₮{card.amount === '49' ? "text-6xl" : "text-5xl"}`}>{card.amount}</span>
                                 <span className="font-medium text-lg">/{card.duration}</span>
                             </Text>
                             <Text as="h3" className={`capitalize text-base font-semibold w-full py-2 text-center  text-zinc-100 my-3 ${card.caption.includes('12') ? "bg-gradient-to-r to-amber-500 from-red-500" : "bg-zinc-800"}`}>{card.caption}</Text>

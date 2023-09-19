@@ -24,7 +24,7 @@ const Offers = () => {
     }, [])
 
     return (
-        <section className="w-full h-auto flex items-center bg-zinc-900">
+        <section className="w-full h-auto flex items-center bg-zinc-900" id="schedule">
             <main className="w-full lg:h-[800px] grid md:grid-cols-2 items-center gap-10 md:gap-0 lg:gap-0 ">
                 <div className="w-full md:h-[800px] h-[300px] grid">
                     <Image alt="Offer Image" objectCover="object-cover" className="w-full h-full" image={Offer} />

@@ -15,13 +15,13 @@ const Calculator = () => {
                 as="p"
                 className="text-amber-500 lg:text-sm text-xs tracking-widest uppercase font-medium"
               >
-                Advanced Calculator
+                Ерөнхий тооцоолуур
               </Text>
               <Text
                 as="h1"
-                className="text-zinc-100 lg:text-5xl md:text-4xl text-3xl"
+                className="text-zinc-100 lg:text-4xl md:text-4xl text-3xl"
               >
-                Calculate Your BMI
+                Биеийн жингийн индекс тооцоолох
               </Text>
               <Text
                 as="h1"

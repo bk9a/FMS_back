@@ -5,23 +5,23 @@ export const NavLinks = [
     },
     {
         name: "About Us",
-        url: "/about"
+        url: "#about"
     },
     {
         name: "Schedule",
-        url: "/schedule"
+        url: "#schedule"
     },
     {
         name: "Gallery",
-        url: "/gallery"
+        url: "#gallery"
     },
     {
         name: "News",
-        url: "/news"
+        url: "#news"
     },
     {
         name: "Contacts",
-        url: "/contact"
+        url: "#contact"
     },
 ];
 
@@ -29,28 +29,28 @@ export const NavLinks = [
 
 export const HeroTexts = [
     {
-        Heading: "Unleash Your Inner Strength!",
-        Paragraph: "Welcome to GymNex, where fitness meets fun! Get ready to unleash your inner strength and transform your life!",
-        Button: "Join Now!"
+        Heading: "Сахилга бат бол зорилго ба амжилтын хоорондох гүүр мөн!",
+        Paragraph: "Эхлээд өөрийгөө өөрчил. Тэгвэл ертөнц өөрчлөгдөхийг үзнэ. Аливаа хүний агуу нь дэлхийг өөрчилснөөр биш өөрийгөө өөрчилснөөр хэмжигдэнэ!!",
+        Button: "Бүртгүүлэх!"
     },
     {
-        Heading: "New Heights of Fitness!",
-        Paragraph: "Push your limits and achieve greatness at our gym! Join our supportive community and embark on a journey of self-improvement and empowerment!",
-        Button: "Sign Up Today!"
+        Heading: "Хувийн сахилга бат бол амжилтанд хүрэх жинхэнэ нууц юм!",
+        Paragraph: "Амжилтанд хүрэхийн тулд үнэхээр ид шидийн орц байсан бол өөрийгөө сахилга баттай болгох болно. Энэхүү зорилгодоо хүрэхэд тань бид туслах болно",
+        Button: "Бидэнтэй нэгдэх!"
     },
     {
-        Heading: "Fitness is Fun with Us!",
-        Paragraph: "At our gym, fitness is not just a routine; it's an enjoyable adventure! Join us in this fitness expedition, where fun and results go hand in hand!",
-        Button: "Enroll Now!"
+        Heading: "Уламжлалтаар биш ухаалгаар!",
+        Paragraph: "Өөрийн сахилга батыг хөгжүүлэх гайхалтай арга бол хамгийн залхуу үедээ хийх ёстой зүйлээ хийж хэвшүүлэх явдал юм. Та үнэхээр залхуу санагдах болгондоо хиймээр санагдсан зүйлийнхээ эсрэгээр хий!",
+        Button: "Яг одоо эхэл!"
     }
 ]
 
 
 export const AboutTexts = {
-    firstText: "About GymNex",
+    firstText: "body hacker-ийн тухай",
     secondText: "Welcome",
-    caption: "Welcome to GymNex, where fitness meets community and transformation happens!",
-    paragraph1: "At GymNex, we are more than just a gym; we are a passionate and supportive fitness family dedicated to helping you achieve your health and wellness goals. Our mission is to create a positive and empowering environment that inspires you to challenge yourself, embrace a healthy lifestyle, and discover the best version of yourself.",
+    caption: "Монгол ардын шилдэг 10 үлгэрийн жагсаалтыг танилцуулж байна. Эдгээр үлгэрү!",
+    paragraph1: "Хүүхэд байхаасаа бидний сонсож өссөн Монгол ардын шилдэг 10 үлгэрийн жагсаалтыг танилцуулж байна. Эдгээр үлгэрүүд нь өнөөг хүртэл ам дамжин яригдсаар ирсэн нь гайхамшигтай биш гэж үү? Монгол ардын үлгэрүүд нь Монгол соёл, сургамжит байдлыг агуулснаараа гадаад үлгэрүүдээс эрс ялгаатайг хэлэх юун.",
 }
 
 export const OfferTexts = {
@@ -58,16 +58,16 @@ export const OfferTexts = {
     secondText: "All Our Offer",
     list: [
         {
-            listCaption: "Weight Loose Programs",
-            text: "Our personalized approach, expert guidance, and proven results will help you achieve your fitness goals. Take the first step towards a transformed body and lifestyle today.",
+            listCaption: "Хичээл программ 1",
+            text: "Хүүхэд байхаасаа бидний сонсож өссөн Монгол ардын шилдэг 10 үлгэрийн жагсаалтыг танилцуулж байна. Эдгээр үлгэр жагсаалтыг танилцуулж байна. Эдгээр үлгэр.",
         },
         {
-            listCaption: "Body Building Programs",
-            text: "Our expert trainers will guide you through tailored workouts, helping you achieve your bodybuilding goals efficiently and safely.",
+            listCaption: "Хичээл программ 1",
+            text: "Хүүхэд байхаасаа бидний сонсож өссөн Монгол ардын шилдэг 10 үлгэрийн жагсаалтыг танилцуулж байна. Эдгээр үлгэр жагсаалтыг танилцуулж байна. Эдгээр үлгэр.",
         }
         , {
-            listCaption: "Different Special Classes",
-            text: "Take your workout to new heights with our high and intense Special Class, where you'll push your limits and achieve remarkable fitness results.",
+            listCaption: "Хичээл программ 1",
+            text: "Хүүхэд байхаасаа бидний сонсож өссөн Монгол ардын шилдэг 10 үлгэрийн жагсаалтыг танилцуулж байна. Эдгээр үлгэр жагсаалтыг танилцуулж байна. Эдгээр үлгэр..",
         }
     ],
 }
@@ -77,19 +77,19 @@ export const MembershipPlans = {
     secondText: "Membership Plans",
     cards: [
         {
-            amount: 8,
+            amount: '10,000',
             duration: "day",
             caption: "One Day Training",
             benefits: ["One time access to all clubs", "Group trainer", "Book a Group class", "Fitness orientation"]
         },
         {
-            amount: 49,
+            amount: '59,000',
             duration: "month",
-            caption: "12 Months Membership",
+            caption: "12 сар Membership",
             benefits: ["Group classes", "Discuss fitness goals", "Group trainer", "Fitness orientation"]
         },
         {
-            amount: 65,
+            amount: '65,000',
             duration: "month",
             caption: "Pay Every Month",
             benefits: ["Group classes", "Discuss fitness goals", "Group trainer", "Fitness orientation"]
@@ -99,29 +99,29 @@ export const MembershipPlans = {
 
 export const ContactTexts = {
     firstText: "call us today",
-    phone: "(+234)70-6910-6259",
+    phone: "(+976)8660-5030",
     paragraph: "At our gym, you can reach out to any of our trainers to schedule a session. Home services is also within the scope of out services. Your fitness is our concern! Health is wealth!",
     button: "Schedule A Meet"
 }
 
 export const TestimonialTexts = {
     firstText: "our testimonials",
-    secondText: "What Clients Say",
+    secondText: "Тэд юу гэж хэлэв",
     feedBacks: [
         {
-            text: "I've been a member for six months, and the gym's supportive community and knowledgeable trainers have helped me surpass my fitness goals!",
-            person: "Darrell Murray",
-            type: "Client"
+            text: "IГэтэл нэгэн зун үзэсгэлэнт ногоон хөндий,өргөн тал нутагт нь ган гачиг болж өвс ногоо ургасангүй.Тэгэхээр нь цуутын цагаагч хоёр.",
+            person: "үзэсгэлэнт ногоон хөндий,",
+            type: "нутагт "
         },
         {
-            text: "The Yoga classes have transformed my life; I feel more centered, strong, and peaceful every time I step on the mat.",
-            person: "Derrick Rodriquez",
-            type: "Client"
+            text: "IГэтэл нэгэн зун үзэсгэлэнт ногоон хөндий,өргөн тал нутагт нь ган гачиг болж өвс ногоо ургасангүй.Тэгэхээр нь цуутын цагаагч хоёр.",
+            person: "үзэсгэлэнт ногоон хөндий,",
+            type: "нутагт "
         },
         {
-            text: "Attending the Special Class has been a game-changer! It's intense, but the results are incredible. Highly recommended!",
-            person: "Collins Thompson",
-            type: "Client"
+            text: "IГэтэл нэгэн зун үзэсгэлэнт ногоон хөндий,өргөн тал нутагт нь ган гачиг болж өвс ногоо ургасангүй.Тэгэхээр нь цуутын цагаагч хоёр.",
+            person: "үзэсгэлэнт ногоон хөндий,",
+            type: "нутагт "
         }
     ],
 }
@@ -133,32 +133,32 @@ export const BlogTexts = {
         {
             caption: "Yoga",
             title: "Do your self realizations quickly fade",
-            paragraph: "Discover the transformative power of yoga as we explore its numerous physical and mental benefits. From increased flexibility and strength to reduced stress and enhanced mindfulness, our yoga classes cater to practitioners of all levels. Join us on the mat and experience the harmony of mind, body, and soul.",
+            paragraph: "Эрт урьд цагт тэмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ.Эрт урьд цагт тэмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ.  .",
             time: "1m",
-            author: "Ralph Cruz",
+            author: "Баянбаяр",
             comments: "21"
         },
         {
             caption: "Trainers & Equipment",
             title: "Little Things Do make a difference",
-            paragraph: "At our gym, we take pride in our exceptional team of expert trainers who are passionate about guiding you on your fitness journey. With their knowledge and personalized approach, you'll receive the support you need to achieve your fitness goals effectively. Additionally, we offer state-of-the-art equipment that's designed to elevate your workouts and provide a holistic fitness experience like no other.",
+            paragraph: "Эрт урьд цагт тэмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ.Эрт урьд цагт тэмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ.  .",
             time: "15m",
-            author: "Bruce Charles",
+            author: "Дулмаа",
             comments: "45"
         },
         {
             caption: "Procrastination",
             title: "The Time is Now",
-            paragraph: "Procrastination can be a common obstacle on the path to achieving our goals. In this blog, we delve into effective strategies to overcome procrastination and increase productivity. From time management techniques to staying motivated, we're here to help you take charge of your goals and embrace a more focused and fulfilling life. It's time to seize the day and make your dreams a reality!",
+            paragraph: "Эрт урьд цагт тэмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ.Эрт урьд цагт тэмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ.  .",
             time: "19m",
-            author: "Steve Wagner",
+            author: "Дондог",
             comments: "55"
         }
     ]
 }
 
 export const FooterTexts = {
-    underLogoText: "We are more than just a gym; we are a passionate and supportive fitness family dedicated to helping you achieve your health and wellness goals. Our mission is to create a positive and empowering environment that inspires you to challenge yourself, embrace a healthy lifestyle, and discover the best version of yourself.",
+    underLogoText: "эмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ.Эрт урьд цагт тэмээ одоогийн бугынх шиг арван хоёр салаа эвэртэй байсан ажээ. Бас өтгөн болоод урт сайхан сүүлтэй байж гэнэ болоод урт сайхан сүүлтэй байж гэнэ болоод урт сайхан сүүлтэй байж гэнэ .",
     quickLinks: {
         caption: "Quick Links",
         links: [

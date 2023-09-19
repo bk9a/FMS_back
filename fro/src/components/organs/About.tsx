@@ -9,7 +9,7 @@ import { AboutTexts } from "../particles/Data";
 
 const About = () => {
     return (
-        <section className="w-full h-auto flex items-center bg-zinc-950">
+        <section className="w-full h-auto flex items-center bg-zinc-950" id="about">
             <main className="w-full md:h-[700px] grid md:grid-cols-2 items-center lg:mx-20 md:mx-10 mx-6 gap-10 md:gap-10 py-12 md:py-0">
                 <div className="h-full w-full md:order-1 order-2 flex flex-col justify-center items-start gap-4 pb-8 md:pb-12">
                     <Fade>
