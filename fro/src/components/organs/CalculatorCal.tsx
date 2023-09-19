@@ -36,11 +36,16 @@ const CalculatorCal = () => {
   const [ageValue, setAgeValue] = useState<number>(0);
   // const [sexValue, setSexValue] = useState<number>(1);
   const [sexValue, setSexValue] = useState<number>(options[0].value);
+  const [ingSel, setIngSel] = useState<number>(Foods[0].value);
+
   const [bmiValue, setBmiValue] = useState<number>(0);
-  const [numEat, setNumEat] = useState<number>(0);
   const [calOneEat, setCalOneEat] = useState<number>(0);
   const [amountFood, setAmountFood] = useState<number>(0);
-  const itemElements = [];
+
+  const [ingre, setIngre] = useState<
+    { calorie: number; name: string; gram: number; id: number }[]
+  >([]);
+  // const itemElements = [];
 
   useEffect(() => {
     let height = parseFloat(heightValue.toString());
@@ -78,6 +83,10 @@ const CalculatorCal = () => {
     }
   }, [calOneEat]);
 
+  // useEffect(() => {
+  //   itemElements.push(<Ingreadant name="Food1" gram={1.1} />);
+  // }, [ingre]);
+
   const setAgeValueFunc = (value: number) => {
     setAgeValue(value);
   };
@@ -96,6 +105,7 @@ const CalculatorCal = () => {
 
   const setFoodOptionFunc = (newOption: number) => {
     console.log(newOption);
+    setIngSel(newOption);
   };
 
   const setSexValueFunc = (newOption: number) => {
@@ -110,21 +120,34 @@ const CalculatorCal = () => {
     setAmountFood(value);
   };
 
-  const addIngrFunc = (value: number) => {};
+  const removeIng = (value: number) => {
+    console.log("ingre");
+    setIngre((current) => current.filter((el) => el.id !== value));
+  };
 
-  // for (let i = 0; i < numEat; i++) {
-  //   itemElements.push(
-  //     <li key={i}>
-  //       <Input
-  //         value={numEat}
-  //         ContainerClass={"w-60"}
-  //         Title={"Өдөрт хооллох тоо"}
-  //         Placeholder={"Өдөрт хооллох тоо"}
-  //         change={setNumEat}
-  //       />
-  //     </li>
-  //   );
-  // }
+  const addIngrFunc = () => {
+    let ingSelVal = parseFloat(ingSel.toString());
+    let amountFoodVal = parseFloat(amountFood.toString());
+
+    if (amountFoodVal != 0) {
+      Foods.forEach((el) => {
+        if (el.value === ingSelVal) {
+          let id = parseFloat(el.value.toString());
+          let calories = parseFloat(el.calories.toString());
+          setIngre((prev) => [
+            ...prev,
+            {
+              calorie: calories * amountFoodVal,
+              name: el.label,
+              gram: amountFoodVal,
+              id: calories,
+            },
+          ]);
+          return;
+        }
+      });
+    }
+  };
 
   return (
     <div className="w-full h-screen flex flex-col justify-start items-center  bg-zinc-900 py-10 px-20 space-y-10">
@@ -201,15 +224,23 @@ const CalculatorCal = () => {
           Placeholder={"Орцны хэмжээ"}
           change={setAmountFoodFunc}
         />
-        <Button
-          type="button"
+        <button
           className="px-6 py-3 bg-bodyhack text-gray-700 text-sm uppercase font-semibold h-12 w-40"
+          onClick={addIngrFunc}
         >
           Add
-        </Button>
+        </button>
       </div>
       <div className="w-10/12 h-fit bg-zinc-700 grid gap-4 grid-cols-4 py-4">
-        <Ingreadant name="Food1" gram={1.1} />
+        {ingre.map((el, i) => (
+          <Ingreadant
+            key={i}
+            id={el.id}
+            name={el.name}
+            gram={el.gram}
+            remove={removeIng}
+          />
+        ))}
       </div>
       <div className="w-10/12 flex p-4 bg-zinc-700 justify-around">
         <Text as="h2" className="text-zinc-200 text-lg text-center">
