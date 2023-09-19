@@ -2,8 +2,13 @@ import { useState, useEffect } from "react"
 import { NavLinks } from "../particles/Data"
 import { List } from "../atoms/List";
 import { NavLink } from "react-router-dom";
+<<<<<<< HEAD
 import { ArrowCircleRight, CirclesFour } from "@phosphor-icons/react";
 
+=======
+import { ArrowCircleRight, Barbell, CirclesFour } from "@phosphor-icons/react";
+import Profile from '../molecules/Dropdown'
+>>>>>>> origin/main
 import { Link } from "react-router-dom";
 import { Text } from "../atoms/Text";
 
@@ -15,6 +20,7 @@ const NavBar = () => {
     const ProName = useSelector((state) => state.system.userData?.name);
 
     const [open, setOpen] = useState(false)
+    const [proopen, setProOpen] = useState(false)
 
     const [navBarColor, setNavBarColor] = useState(false)
 
@@ -57,15 +63,18 @@ const NavBar = () => {
                         }
 
 {
-    ProName  ? <List className="w-full text-base" key={20}>
-    <NavLink to={'/profile'} className={`relative inline-block  px-2 whitespace-nowrap text-white uppercase text-xs font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5`}>{ProName}</NavLink>
-</List> : 
+    ProName  ?
+     <List className="w-full text-base" key={20}>
+    <NavLink to={'/profile'} className={`relative inline-block  px-2 whitespace-nowrap text-white uppercase text-xs font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5`}><Profile text ={ProName} />  </NavLink>
+</List>
+
+ : 
 <List className="w-full text-base" key={20}>
                                     <NavLink to={'/login'} className={`relative inline-block  px-2 whitespace-nowrap text-white uppercase text-xs font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5`}>Нэвтрэх</NavLink>
                                 </List>
 
 }
-                             
+                     
                     </ul>
 
                 </div>
