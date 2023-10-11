@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import CalculatorCal from "./components/organs/CalculatorCal";
-import AdminHome from "./Admin/page/AdminHome";
 
 // import AuthLayout from "layouts/Auth.js";
 import Cal from "./components/pages/Cal";
@@ -17,7 +16,6 @@ export default function () {
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Home />} />
       <Route path="/cal" element={<CalculatorCal />} />
-      <Route path="/admin" element={<AdminHome />} />
     </Routes>
   );
 }
