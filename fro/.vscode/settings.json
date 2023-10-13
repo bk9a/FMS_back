@@ -1,0 +1,19 @@
+{
+    "window.zoomLevel": -1,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "phpformatter.composer": true,
+    "php.validate.executablePath": "",
+    "workbench.iconTheme": "material-icon-theme",
+    "dart.openDevTools": "flutter",
+    // "workbench.colorTheme": "Monokai",
+    "window.openFoldersInNewWindow": "on",
+    "editor.codeActionsOnSave": null,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDelete": false,
+  }

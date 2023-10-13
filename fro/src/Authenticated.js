@@ -14,7 +14,7 @@ export default function () {
       
       <Route
         path="*"
-        element={<Navigate to="/" replace />}
+        element={<Navigate to="/login" replace />}
     />
     </Routes>
   );
