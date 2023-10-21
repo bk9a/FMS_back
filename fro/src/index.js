@@ -43,7 +43,6 @@ function App() {
   if (token) {
     return <Authenticated />;
   } else {
-    console.log("fuck u ");
     return <NotAuthenticated />;
   }
 }
