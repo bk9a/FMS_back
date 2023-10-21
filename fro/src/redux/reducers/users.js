@@ -5,10 +5,10 @@ import {
   setLoading,
   setAlert,
   setAlertMessege,
-  setAlertStatus
+  setAlertStatus,
 } from "./system";
 import helper from "../../helper/helper";
-import { setToken ,setUserData} from "./system";
+import { setToken, setUserData } from "./system";
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -33,9 +33,15 @@ export const slice = createSlice({
       RoleID: "",
     },
     formData: {
-      name: null,
+      id: null,
+      firstname: null,
+      lastname: null,
       phone: null,
-
+      email: null,
+      sex: null,
+      level: null,
+      username: null,
+      password: null,
     },
     fieldConfig: {
       RoleID: {
@@ -78,12 +84,15 @@ export const slice = createSlice({
     },
     setClearFormData: (state) => {
       state.formData = {
-        UserName: null,
-        Password: null,
-        EmpFirstName: null,
-        EmpLastName: null,
-        RoleID: null,
-        IsActive: null,
+        id: null,
+        firstname: null,
+        lastname: null,
+        phone: null,
+        email: null,
+        sex: null,
+        level: null,
+        username: null,
+        password: null,
       };
       state.dialog = false;
     },
@@ -111,48 +120,49 @@ export const {
   setSearchFieldData,
 } = slice.actions;
 
-export const loadUsers = ({ page, rowsPerPage }) => async (
-  dispatch,
-  getState
-) => {
-  try {
-    var params = getState().users.colsearch;
-    params = JSON.stringify(params);
-    dispatch(setLocalLoading(true));
+export const loadUsers =
+  ({ page, rowsPerPage }) =>
+  async (dispatch, getState) => {
+    try {
+      var params = getState().users.colsearch;
+      params = JSON.stringify(params);
+      dispatch(setLocalLoading(true));
 
-    const res = await helper.CallServiceWorker({
-      url: "users",
-      params,
-      page,
-      rowsPerPage,
-    });
+      const res = await helper.CallServiceWorker({
+        url: "users",
+        params,
+        page,
+        rowsPerPage,
+      });
 
-    const reqData = res.data.data.data;
-    dispatch(
-      setData({
-        list: reqData,
-        count: res.data.data.count,
-      })
-    );
-    if (res.data.success === true) {
-      dispatch(setAlert(true));
-      dispatch(setAlertStatus(true));
-      dispatch(setAlertMessege("Амжилттай"));
-      dispatch(setClearFormData());
-    } else {
-      dispatch(setAlert(true));
-      dispatch(setAlertStatus(false));
-      dispatch(setAlertMessege("Login хийнэ үү!!!"));
-      dispatch(setToken(null));
+      const reqData = res.data.data.data;
+      console.log({ reqData });
+
+      dispatch(
+        setData({
+          list: reqData,
+          count: res.data.data.count,
+        })
+      );
+      if (res.data.success === true) {
+        dispatch(setAlert(true));
+        dispatch(setAlertStatus(true));
+        dispatch(setAlertMessege("Амжилттай"));
+        dispatch(setClearFormData());
+      } else {
+        dispatch(setAlert(true));
+        dispatch(setAlertStatus(false));
+        dispatch(setAlertMessege("Login хийнэ үү!!!"));
+        dispatch(setToken(null));
+      }
+
+      dispatch(setLocalLoading(false));
+    } catch (error) {
+      console.log(error);
+      dispatch(setLocalLoading(false));
+      dispatch(setAlert({ message: "Алдаа гарлаа", success: false }));
     }
-
-    dispatch(setLocalLoading(false));
-  } catch (error) {
-    console.log(error);
-    dispatch(setLocalLoading(false));
-    dispatch(setAlert({ message: "Алдаа гарлаа", success: false }));
-  }
-};
+  };
 
 export const SaveFormData = () => async (dispatch, getState) => {
   try {
@@ -255,41 +265,42 @@ export const loadDataSourceRole = () => async (dispatch) => {
   }
 };
 
-export const Login = ({username, password}) => async (dispatch, getState) => {
-  try {
-   
-    dispatch(setLoading(true));
+export const Login =
+  ({ username, password }) =>
+  async (dispatch, getState) => {
+    try {
+      dispatch(setLoading(true));
 
-    if (password && password) {
-      const res = await axios.post(
-        process.env.REACT_APP_API_URL + `/users/login`,
-        {
-          Username: username,
-          Password: password,
+      if (password && password) {
+        const res = await axios.post(
+          process.env.REACT_APP_API_URL + `/users/login`,
+          {
+            Username: username,
+            Password: password,
+          }
+        );
+        if (res.data.success === true) {
+          localStorage.setItem("token", res.data.token);
+
+          dispatch(setToken(res.data.token));
+          dispatch(setAlert(true));
+          dispatch(setAlertStatus(true));
+          dispatch(setAlertMessege("Амжилттай"));
+          dispatch(setClearFormData());
+        } else {
+          dispatch(setAlert(true));
+          dispatch(setAlertStatus(false));
+          dispatch(setAlertMessege(res.data.message));
         }
-      );
-      if (res.data.success === true) {
-        localStorage.setItem("token", res.data.token);
-      
-        dispatch(setToken(res.data.token));
-        dispatch(setAlert(true));
-        dispatch(setAlertStatus(true));
-        dispatch(setAlertMessege("Амжилттай"));
-        dispatch(setClearFormData());
-      } else {
-        dispatch(setAlert(true));
-        dispatch(setAlertStatus(false));
-        dispatch(setAlertMessege(res.data.message));
       }
-    }
 
-    dispatch(setLoading(false));
-  } catch (error) {
-    console.log(error);
-    dispatch(setLoading(false));
-    dispatch(setAlert({ message: "Алдаа гарлаа", success: false }));
-  }
-};
+      dispatch(setLoading(false));
+    } catch (error) {
+      console.log(error);
+      dispatch(setLoading(false));
+      dispatch(setAlert({ message: "Алдаа гарлаа", success: false }));
+    }
+  };
 
 export const getNotification = () => async (dispatch, getState) => {
   try {
@@ -342,10 +353,9 @@ export const checkLogin = () => async (dispatch, getState) => {
       { headers: { authorization: "Bearer " + token } }
     );
     if (res.data.success === true) {
-
       // console.log(res.data.user);
-      dispatch(setUserData(res.data.user))
-      
+      dispatch(setUserData(res.data.user));
+
       dispatch(setAlert(true));
       dispatch(setAlertStatus(true));
       dispatch(setToken(token));

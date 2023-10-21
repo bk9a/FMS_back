@@ -4,6 +4,7 @@ import { Barbell, EnvelopeSimple, MapPin, Phone } from "@phosphor-icons/react"
 import { FooterTexts } from "../particles/Data"
 import { List } from "../atoms/List"
 import { useCallback } from "react"
+import MyCustomImage from '../../assets/logoAndIcon/logo.png';
 
 
 const Footer = () => {
@@ -25,11 +26,13 @@ const Footer = () => {
             <main className="w-full lg:pt-28 lg:pb-12 pt-20 pb-12 px-6 grid md:grid-cols-3 lg:gap-8 md:gap-5 gap-8 lg:px-32">
                 <div className="flex flex-col gap-2">
                     <Link to={`/`} className="font-extrabold flex items-center relative md:text-3xl text-2xl">
-                        <Text as="span" className="text-amber-500 absolute -top-5 md:left-5 left-3">
-                            <Barbell size={35} color="currentColor" weight="fill" />
-                        </Text>
-                        <Text as="span" className="text-white">Gym</Text>
-                        <Text as="span" className="bg-gradient-to-r from-amber-500 to-red-500 bg-clip-text text-transparent">Nex</Text>
+                        {/* <Text as="span" className="text-amber-500 absolute -top-5 md:left-5 left-3"> */}
+                        {/* <img src={MyCustomImage} alt="My Custom Image" className="w-10 h-10 md:w-20 md:h-20 absolute -top-5 md:left-2 left-3" /> */}
+                            {/* <Barbell size={35} color="currentColor" weight="fill" /> */}
+                        {/* </Text> */}
+                        
+                        <Text as="span" className="text-white">Body</Text>
+                        <Text as="span" className="bg-gradient-to-r from-amber-500 to-red-500 bg-clip-text text-transparent">Hacker</Text>
                     </Link>
                     <Text as="p" className="text-zinc-400 text-justify">{FooterTexts.underLogoText}</Text>
                 </div>

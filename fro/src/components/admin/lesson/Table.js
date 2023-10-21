@@ -1,38 +1,74 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { data } from "../Data";
 import { Table, Modal, Input, Space, Button, Card } from "antd";
+import { Form } from "react-router-dom";
+import {
+  loadUsers,
+  setFormData,
+  setClearFormData,
+  setDialog,
+} from "redux/reducers/users";
+import UserForm from "./Form";
+import Field from "./Field";
 const Lesson = () => {
+  const dispatch = useDispatch();
   const [Data, setData] = useState(data);
   const [edit, setEdit] = useState(null);
   const [visible, setVisible] = useState(false);
   const [title, setTitle] = useState("Нэмэх");
+
+  const { list: data1, count } = useSelector((state) => state.users.data);
+
+  const loading1 = useSelector((state) => state.users.loading);
+  const dialog = useSelector((state) => state.users.dialog);
+  const formData = useSelector((state) => state.users.formData);
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  useEffect(() => {
+    GetData();
+  }, [page, rowsPerPage]);
+
+  const GetData = () => {
+    // dispatch(loadDataSourceRole());
+    dispatch(loadUsers({ page, rowsPerPage, searchValue: "" }));
+  };
   const columns = [
     {
-      key: "name",
+      key: "firstname",
       title: "Нэр",
-      dataIndex: "name",
+      dataIndex: "firstname",
     },
     {
-      key: "email",
+      key: "lastname",
       title: "Майл ",
-      dataIndex: "email",
+      dataIndex: "lastname",
     },
-    {
-      key: "address",
-      title: "Хаяг",
-      dataIndex: "address",
-    },
+
     {
       key: "phone",
       title: "Утас",
       dataIndex: "phone",
     },
     {
-      key: "website",
-      title: "Вэбсайт",
-      dataIndex: "website",
+      key: "email",
+      title: "Цахим шуудан",
+      dataIndex: "email",
     },
+
+    {
+      key: "sex",
+      title: "Хүйс",
+      dataIndex: "sex",
+    },
+    {
+      key: "level",
+      title: "Түвшин",
+      dataIndex: "level",
+    },
+
     {
       key: "action",
       title: "Үйлдэл",
@@ -63,15 +99,23 @@ const Lesson = () => {
   const Add = () => {
     // console.log(record);
     setTitle("Нэмэх");
+    // dispatch(setFormData({}));
+    dispatch(setDialog(true));
 
-    setEdit(null);
-    setVisible(true);
+    // setEdit(null);
+    // setVisible(true);
   };
-  const Edit = (record) => {
-    // console.log(record);
+  // const Edit = (record) => {
+  //   // console.log(record);
+  //   setTitle("Засварлах");
+  //   setEdit(record);
+  //   setVisible(true);
+  // };
+  const Edit = (row) => {
+    // dispatch(setAlert({ message: "hidddddd", success: false }));
     setTitle("Засварлах");
-    setEdit(record);
-    setVisible(true);
+    if (row) dispatch(setFormData(row));
+    dispatch(setDialog(true));
   };
 
   const Delete = (record) => {
@@ -93,11 +137,11 @@ const Lesson = () => {
         <div className="table w-full">
           <Modal
             title={title}
-            visible={visible}
+            visible={dialog}
             okButtonProps={{ style: { backgroundColor: "#01796f" } }}
             okText="Хадгалах"
             cancelText="Буцах"
-            onCancel={() => /*setVisible(false)*/ ResetEditing()}
+            onCancel={() => /*setVisible(false)*/ dispatch(setClearFormData())}
             onOk={() => /*setVisible(false)*/ {
               setData((pre) => {
                 return pre.map((student) => {
@@ -111,47 +155,10 @@ const Lesson = () => {
               ResetEditing();
             }}
           >
-            <Card className="flex flex-row ">
-              <Input
-                value={edit?.name}
-                onChange={(e) => {
-                  setEdit((pre) => {
-                    return { ...pre, name: e.target.value };
-                  });
-                }}
-              />
-              <Input
-                value={edit?.email}
-                onChange={(e) => {
-                  setEdit((pre) => {
-                    return { ...pre, email: e.target.value };
-                  });
-                }}
-              />
-              <Input
-                value={edit?.address}
-                onChange={(e) => {
-                  setEdit((pre) => {
-                    return { ...pre, address: e.target.value };
-                  });
-                }}
-              />
-              <Input
-                value={edit?.phone}
-                onChange={(e) => {
-                  setEdit((pre) => {
-                    return { ...pre, phone: e.target.value };
-                  });
-                }}
-              />
-              <Input
-                value={edit?.website}
-                onChange={(e) => {
-                  setEdit((pre) => {
-                    return { ...pre, website: e.target.value };
-                  });
-                }}
-              />
+            <Card>
+              <Space direction="vertical" size="large" className=" w-full">
+                <UserForm />
+              </Space>
             </Card>
           </Modal>
           <Space
@@ -170,7 +177,7 @@ const Lesson = () => {
           </Space>
           <Table
             className="w-full "
-            dataSource={Data}
+            dataSource={data1}
             columns={columns}
             pagination={true}
           />

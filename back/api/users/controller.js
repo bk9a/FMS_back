@@ -400,40 +400,17 @@ module.exports.list = asyncHandler(async (req, res) => {
   var par = JSON.parse(params);
 
   const where = {};
-  if (par) {
-    where[Op.and] = [
-      {
-        UserName: {
-          [Op.like]: "%" + par.UserName + "%",
-        },
-      },
-      {
-        EmpFirstName: {
-          [Op.like]: "%" + par.EmpFirstName + "%",
-        },
-      },
-      {
-        EmpLastName: {
-          [Op.like]: "%" + par.EmpLastName + "%",
-        },
-      },
-      {
-        RoleID: {
-          [Op.like]: "%" + par.RoleID + "%",
-        },
-      },
-    ];
-  }
+
   const pager = req.pager;
   const { rows, count } = await users.findAndCountAll({
     where: where,
     // order: [["UserName", "UserName"]],
 
     include: [
-      {
-        model: user_role,
-        as: "user_role",
-      },
+      // {
+      //   model: user_role,
+      //   as: "user_role",
+      // },
     ],
     ...pager,
   });
