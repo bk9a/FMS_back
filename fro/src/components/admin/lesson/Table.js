@@ -11,7 +11,6 @@ import {
   setDialog,
 } from "redux/reducers/users";
 import UserForm from "./Form";
-import Field from "./Field";
 const Lesson = () => {
   const dispatch = useDispatch();
   const [Data, setData] = useState(data);
@@ -37,36 +36,25 @@ const Lesson = () => {
   };
   const columns = [
     {
-      key: "firstname",
-      title: "Нэр",
-      dataIndex: "firstname",
+      key: "name",
+      title: "Хичээлийн нэр",
+      dataIndex: "name",
     },
     {
-      key: "lastname",
-      title: "Майл ",
-      dataIndex: "lastname",
-    },
-
-    {
-      key: "phone",
-      title: "Утас",
-      dataIndex: "phone",
-    },
-    {
-      key: "email",
-      title: "Цахим шуудан",
-      dataIndex: "email",
+      key: "info",
+      title: "Хичээлийн мэдээлэл",
+      dataIndex: "info",
     },
 
     {
-      key: "sex",
-      title: "Хүйс",
-      dataIndex: "sex",
+      key: "CreatedDate",
+      title: "Огноо",
+      dataIndex: "CreatedDate",
     },
     {
-      key: "level",
-      title: "Түвшин",
-      dataIndex: "level",
+      key: "CreatedUserID",
+      title: "Үүсгэсэн ажилтан",
+      dataIndex: "CreatedUserID",
     },
 
     {
