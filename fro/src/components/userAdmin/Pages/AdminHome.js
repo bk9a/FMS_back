@@ -9,6 +9,7 @@ import { Button, Menu, Avatar, Modal } from "antd";
 import ViewCourse from "./ViewCourse";
 import Payment from "./Payment";
 import Profile from "./Profile.js";
+import CalculatorCal from "./CalculatorCal";
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -84,12 +85,12 @@ const AdminHome = () => {
   };
   return (
     <div className="w-full h-screen flex">
-      <div className="flex flex-col h-full w-[350px] border-r border-bordercolor">
+      <div className="flex flex-col h-full w-[250px] border-r border-bordercolor">
         <div className="w-full h-1/4 flex justify-center items-center">
           <img className="w-40 bg-teal-50" src="logo.png" />
         </div>
         <Menu
-          className="h-3/4 w-[350px]"
+          className="h-3/4 w-[250px]"
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}
           mode="inline"
@@ -106,8 +107,9 @@ const AdminHome = () => {
         </div>
         <div className="w-full h-fit">
           {/* <Payment /> */}
-          <Profile />
+          {/* <Profile /> */}
           {/* <ViewCourse /> */}
+          <CalculatorCal />
         </div>
       </div>
     </div>
