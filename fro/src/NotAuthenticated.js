@@ -12,6 +12,7 @@ import Lesson from "./components/admin/lesson/Table";
 import Dashboard from "./components/admin/dashboard";
 import Main from "./components/layout/Main";
 import App from "./App";
+import AdminHome from "components/userAdmin/Pages/AdminHome";
 export default function () {
   console.log(" not auth ");
 
@@ -26,6 +27,8 @@ export default function () {
         <Route path="lesson" element={<Lesson />} />
         <Route index element={<Dashboard />} />
       </Route>
+
+      <Route path="userAdmin" element={<AdminHome />}></Route>
 
       <Route path="main" element={<Main />}>
         <Route path="class" element={<Customer />} />
