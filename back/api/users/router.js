@@ -10,7 +10,7 @@ const {
   destroy,
   login,
   checklogin,
-  convert,
+  // convert,
   test,
   test1,
   deletetest,
@@ -19,7 +19,7 @@ const {
 
 // router.route("/").get(test).post(test1).delete(deletetest);
 router.route("/get-noti").get(Auth.protect, getNoti);
-router.route("/convert").get(Auth.protect, convert);
+// router.route("/convert").get(Auth.protect, convert);
 router
   .route("/")
   .get(Auth.protect, middleWare.list, list)

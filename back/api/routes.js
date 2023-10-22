@@ -2,6 +2,12 @@ const router = require("express").Router();
 
 router.use("/news", require("./news/router"));
 router.use("/users", require("./users/router"));
+
+
+router.use("/lesson", require("./_lesson/router"));
+router.use("/classinfo", require("./_classinfo/router"));
+router.use("/userclass", require("./_userclass/router"));
+router.use("/classlesson", require("./_classlesson/router"));
 // router.use("/test", require("./users/router"));
 router.use("/users-role", require("./users_role/router"));
 router.use("/company-industry", require("./companyIndustry/router"));
