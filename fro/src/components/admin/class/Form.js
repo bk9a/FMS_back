@@ -3,24 +3,27 @@ import React, { useEffect } from "react";
 // import { makeStyles } from "@material-ui/core/styles";
 //custom
 import { useDispatch } from "react-redux";
-import { setFormFieldData, loadDataSourceRole } from "redux/reducers/users";
+import {
+  setFormFieldData,
+  // loadDataSourceRole,
+} from "redux/reducers/_classinfo";
 // import { BaseField } from "../../BaseComponents";
 import { BaseField } from "components/BaseComponent";
 //icons
 const UserForm = (props) => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(loadDataSourceRole());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(loadDataSourceRole());
+  // }, []);
 
   console.log("render form");
 
   const getFieldProps = (fieldName) => {
     return {
-      valueSelector: `users.formData.${fieldName}`,
-      dataSourceSelector: `users.fieldConfig.${fieldName}.dataSources`,
-      configSelector: `users.fieldConfig.${fieldName}`,
+      valueSelector: `classinfo.formData.${fieldName}`,
+      dataSourceSelector: `classinfo.fieldConfig.${fieldName}.dataSources`,
+      configSelector: `classinfo.fieldConfig.${fieldName}`,
       fieldName: fieldName,
       onChange: (fieldName, value) => {
         dispatch(setFormFieldData({ fieldName, value }));

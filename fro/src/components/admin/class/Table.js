@@ -5,13 +5,13 @@ import { data } from "../Data";
 import { Table, Modal, Input, Space, Button, Card } from "antd";
 import { Form } from "react-router-dom";
 import {
-  loadUsers,
+  load,
   setFormData,
   setClearFormData,
   setDialog,
-} from "redux/reducers/users";
+} from "redux/reducers/classinfo";
 import UserForm from "./Form";
-const Lesson = () => {
+const ClassInfo = () => {
   const dispatch = useDispatch();
   const [Data, setData] = useState(data);
   const [edit, setEdit] = useState(null);
@@ -185,4 +185,4 @@ const Lesson = () => {
     </Card>
   );
 };
-export default Lesson;
+export default ClassInfo;
