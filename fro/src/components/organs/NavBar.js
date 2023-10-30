@@ -13,7 +13,8 @@ import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import Anchor from "antd/es/anchor/Anchor";
 
 const NavBar = () => {
-  const ProName = useSelector((state) => state.system.userData?.name);
+  const ProName = useSelector((state) => state.system.userData?.firstname);
+  console.log({ ProName });
 
   const [open, setOpen] = useState(false);
   const [proopen, setProOpen] = useState(false);
@@ -83,23 +84,13 @@ const NavBar = () => {
                 direction="horizontal"
                 className="text-white  "
                 items={[
-                  // {
-                  //   key: 1,
-                  //   href: "#1",
-                  //   title: (
-                  //     <text className="text-white hover:text-black  focus:text-red-500">
-                  //       haha
-                  //     </text>
-                  //   ),
-                  // },
-
                   ...NavLinks.map((navlink, index) => ({
                     key: navlink.url,
                     href: navlink.url,
                     title: (
                       <List className="w-full text-base h-8" key={index}>
                         <text
-                          className={`  relative inline-block  px-4 whitespace-nowrap text-white focus:text-black uppercase text-sm font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 `}
+                          className={`  relative inline-block  px-4 whitespace-nowrap text-white  uppercase text-sm font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 `}
                         >
                           {navlink.name}
                         </text>
@@ -108,13 +99,11 @@ const NavBar = () => {
                   })),
                   ProName
                     ? {
-                        key: "",
-                        href: "",
                         title: (
                           <List className="w-full text-base h-8" key={20}>
                             <NavLink
-                              to={"/profile"}
-                              className={`  relative inline-block  px-4 whitespace-nowrap text-white focus:text-black uppercase text-sm font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 `}
+                              to={"/main"}
+                              className={`  relative inline-block  px-4 whitespace-nowrap text-white  uppercase text-sm font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 `}
                             >
                               {ProName}
                             </NavLink>
