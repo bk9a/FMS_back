@@ -9,7 +9,7 @@ import { ConfigProvider } from "antd";
 import { useSelector } from "react-redux";
 import MyCustomImage from "../../assets/logoAndIcon/logo.png";
 import { getGeneratedNameForNode } from "typescript";
-
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import Anchor from "antd/es/anchor/Anchor";
 
 const NavBar = () => {
@@ -136,21 +136,20 @@ const NavBar = () => {
                         ),
                       },
                 ]}
-              ></Anchor>
-              <Anchor direction="horizontal"></Anchor>
+              />
             </ul>
           </div>
           <div
             className="hamburger lg:hidden flex text-white cursor-pointer"
             onClick={handleToggle}
           >
-            {/* <CirclesFour size={30} color="currentColor" weight="light" /> */}
+            <MenuOutlined size={30} color="currentColor" weight="light" />
           </div>
         </nav>
 
         {/* Mobile Nav  */}
         <nav
-          className={`flex justify-end lg:hidden h-screen w-full bg-gray-950/90 fixed top-0  ${
+          className={`flex justify-end lg:hidden h-screen w-2/3 bg-gray-950/90 fixed top-0  ${
             open ? "right-0" : "-right-[120vw]"
           } transition-all duration-500 ease-out`}
         >
@@ -163,17 +162,80 @@ const NavBar = () => {
               <div className="w-full flex pt-5 px-4 justify-between items-center">
                 <Link to={`/`} className="font-extrabold text-2xl">
                   <span className=" text-white ">Body</span>
-                  <span className=" text-amber-500">Hacker</span>
+                  <span className=" text-bodyhack">Hacker</span>
                 </Link>
                 <div
                   className="hamburger text-white cursor-pointer"
                   onClick={handleToggle}
                 >
-                  {/* <ArrowCircleRight size={25} color="currentColor" weight="light" /> */}
+                  <CloseOutlined
+                    size={25}
+                    color="currentColor"
+                    weight="light"
+                  />
                 </div>
               </div>
               <ul className="flex flex-col gap-3 pl-5">
-                {NavLinks.map((navlink, index) => (
+                <Anchor
+                  direction="vertical"
+                  className="text-white  "
+                  onClick={handleToggle}
+                  items={[
+                    // {
+                    //   key: 1,
+                    //   href: "#1",
+                    //   title: (
+                    //     <text className="text-white hover:text-black  focus:text-red-500">
+                    //       haha
+                    //     </text>
+                    //   ),
+                    // },
+
+                    ...NavLinks.map((navlink, index) => ({
+                      key: navlink.url,
+                      href: navlink.url,
+                      title: (
+                        <List className="w-full text-base h-8" key={index}>
+                          <text
+                            className={`  relative inline-block  px-4 whitespace-nowrap text-white focus:text-black uppercase text-sm font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 `}
+                          >
+                            {navlink.name}
+                          </text>
+                        </List>
+                      ),
+                    })),
+                    ProName
+                      ? {
+                          key: "",
+                          href: "",
+                          title: (
+                            <List className="w-full text-base h-8" key={20}>
+                              <NavLink
+                                to={"/profile"}
+                                className={`  relative inline-block  px-4 whitespace-nowrap text-white focus:text-black uppercase text-sm font-bold transition-all duration-200 hover:text-amber-500 before:w-0 before:h-0.5 before:bg-gradient-to-r from-red-500 to-amber-500 before:absolute before:-bottom-[2.93rem] before:left-0 before:transition-all before:duration-200 before:ease-in hover:before:left-0.5 `}
+                              >
+                                {ProName}
+                              </NavLink>
+                            </List>
+                          ),
+                        }
+                      : {
+                          key: "",
+                          href: "",
+                          title: (
+                            <List className="w-full text-base h-8" key={20}>
+                              <NavLink
+                                to={"/profile"}
+                                className={`relative overflow-hidden inline-block text-white before:w-full before:h-0.5 before:bg-color2 before:absolute before:bottom-0 before:-left-full before:rounded-full before:transition-all before:duration-200 before:ease-in hover:before:left-0 `}
+                              >
+                                Нэвтрэх
+                              </NavLink>
+                            </List>
+                          ),
+                        },
+                  ]}
+                />
+                {/* {NavLinks.map((navlink, index) => (
                   <List className="w-full text-base" key={index}>
                     <NavLink
                       to={navlink.url}
@@ -183,7 +245,7 @@ const NavBar = () => {
                       {navlink.name}
                     </NavLink>
                   </List>
-                ))}
+                ))} */}
               </ul>
             </section>
           </div>
