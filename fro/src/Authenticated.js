@@ -21,9 +21,12 @@ export default function () {
       <Route path="main" element={<Main />}>
         <Route path="class" element={<Customer />} />
         <Route path="lesson" element={<Lesson />} />
+        <Route path="customer" element={<Customer />} />
+        <Route path="dashboard" element={<Dashboard />} />
+
         <Route index element={<Dashboard />} />
       </Route>
-      <Route path="*" element={<Navigate to="/login" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

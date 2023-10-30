@@ -3,12 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { data } from "../Data";
 import { Table, Modal, Input, Space, Button, Card } from "antd";
-import { Form } from "react-router-dom";
+// import { Form } from "react-router-dom";
+import BaseSnackbar from "components/BaseComponent/BaseSnackbar";
 import {
   loadUsers,
   setFormData,
   setClearFormData,
   setDialog,
+  SaveFormData,
+  DeleteFormData,
 } from "redux/reducers/users";
 import UserForm from "./Form";
 const Lesson = () => {
@@ -124,9 +127,8 @@ const Lesson = () => {
       cancelText: "Буцах",
       okButtonProps: { style: { backgroundColor: "#01796f" } },
       onOk: () => {
-        setData((pre) => {
-          return pre.filter((person) => person.id != record.id);
-        });
+        // alert(record.id);
+        dispatch(DeleteFormData(record.id));
       },
     });
   };
@@ -134,6 +136,7 @@ const Lesson = () => {
     <Card title="Хичээл">
       <div className="App w-full">
         <div className="table w-full">
+          <BaseSnackbar />
           <Modal
             title={title}
             visible={dialog}
@@ -142,16 +145,8 @@ const Lesson = () => {
             cancelText="Буцах"
             onCancel={() => /*setVisible(false)*/ dispatch(setClearFormData())}
             onOk={() => /*setVisible(false)*/ {
-              setData((pre) => {
-                return pre.map((student) => {
-                  if (student.id === edit.id) {
-                    return edit;
-                  } else {
-                    return student;
-                  }
-                });
-              });
-              ResetEditing();
+              dispatch(SaveFormData());
+              // ResetEditing();
             }}
           >
             <Card>

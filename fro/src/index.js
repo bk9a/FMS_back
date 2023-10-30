@@ -19,26 +19,30 @@ import "./assets/styles/responsive.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { checkLogin } from "./redux/reducers/users";
+
+import BaseSpin from "components/BaseComponent/BaseSpin";
+
 // import App from "./App";
 
 const hist = createBrowserHistory();
 
 function App() {
+  document.title = "BodyHacker";
   const token = useSelector((state) => state.system.token);
-  console.log({ token });
+
   const loading = useSelector((state) => state.system.sysLoading);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(checkLogin());
   }, []);
 
-  // if (loading) {
-  //   return (
-  //     <>
-  //       <BaseBackdrop /> <BaseSnackbar />
-  //     </>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <>
+        <BaseSpin />
+      </>
+    );
+  }
 
   if (token) {
     return <Authenticated />;
@@ -53,7 +57,7 @@ root.render(
     <BrowserRouter>
       {" "}
       <Provider store={store}>
-        {" "}
+        {/* <BaseSnackbar /> */}
         <App />
       </Provider>
     </BrowserRouter>

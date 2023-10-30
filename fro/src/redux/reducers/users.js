@@ -166,15 +166,14 @@ export const loadUsers =
 
 export const SaveFormData = () => async (dispatch, getState) => {
   try {
-    var token = helper.getToken();
     dispatch(setLoading(true));
 
     const currentState = getState().users.formData;
-    if (currentState.UserID) {
+    if (currentState.id) {
       const res = await helper.UpdateServiceWorker({
         url: "users",
         currentState,
-        id: currentState.UserID,
+        id: currentState.id,
       });
       if (res.data.success === true) {
         dispatch(setAlert(true));

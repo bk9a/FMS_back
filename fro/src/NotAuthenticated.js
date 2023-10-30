@@ -18,7 +18,6 @@ export default function () {
 
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Home />} />
       {/* <Route path="/cal" element={<CalculatorCal />} /> */}
       {/* <Route path="/customer" element={<Customer />} /> */}
@@ -30,12 +29,12 @@ export default function () {
 
       <Route path="userAdmin" element={<AdminHome />}></Route>
 
-      <Route path="main" element={<Main />}>
+      {/* <Route path="main" element={<Main />}>
         <Route path="class" element={<Customer />} />
         <Route path="lesson" element={<Lesson />} />
         <Route index element={<Dashboard />} />
-      </Route>
-
+      </Route> */}
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );

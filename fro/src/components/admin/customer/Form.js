@@ -10,11 +10,9 @@ import { BaseField } from "components/BaseComponent";
 const UserForm = (props) => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(loadDataSourceRole());
-  }, []);
-
-  console.log("render form");
+  // useEffect(() => {
+  //   dispatch(loadDataSourceRole());
+  // }, []);
 
   const getFieldProps = (fieldName) => {
     return {
@@ -34,8 +32,12 @@ const UserForm = (props) => {
     <div>
       <BaseField label="Нэр" {...getFieldProps("firstname")} />
       <BaseField label="Овог" {...getFieldProps("lastname")} />
+      <BaseField label="Хүйс" {...getFieldProps("sex")} />
       <BaseField label="Утас" {...getFieldProps("phone")} />
       <BaseField label="Цахим шуудан" {...getFieldProps("email")} />
+      <BaseField label="Түвшин" {...getFieldProps("level")} />
+      <BaseField label="Нууц үг" {...getFieldProps("password")} />
+      <BaseField label="Нэвтрэх нэр" {...getFieldProps("username")} />
       {/* <BaseField
         label="Хэрэглэгчийн эрх"
         type="selectBox"

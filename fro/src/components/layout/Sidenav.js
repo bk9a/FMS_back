@@ -170,7 +170,7 @@ function Sidenav({ color }) {
       <hr />
       <Menu theme="dark" mode="inline">
         <Menu.Item key="1">
-          <NavLink to="Dashboard">
+          <NavLink to="dashboard">
             <span
               className="icon"
               style={{
@@ -238,7 +238,7 @@ function Sidenav({ color }) {
           Хэрэглэгч
         </Menu.Item>
         <Menu.Item key="8">
-          <NavLink to="/custumer">
+          <NavLink to="customer">
             <span className="icon">{signin}</span>
             <span className="label">Хэрэглэгч</span>
           </NavLink>

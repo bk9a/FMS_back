@@ -9,7 +9,7 @@ import NavBar from "../organs/NavBar.js"
 import Offers from "../organs/Offers"
 import Testimonials from "../organs/Testimonials"
 
-
+import { Anchor, Row, Col } from 'antd';
 const Home = () => {
     return (
         <>
